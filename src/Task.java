@@ -1,28 +1,23 @@
+import java.util.ArrayList;
 import java.util.Date;
 public class Task {
-	
-	
-	
-	
-	
-	
-	private String name;
+	private String nazvanie;
 	private String description;
 	private Date data;
-	public Task(String nazvanie,String descr,Date data,String name, String surname, int telefon){
-		this.name=nazvanie;
+	public Task (String nazvanie,String descr,String name, String surname){
+		this.nazvanie=nazvanie;
 		this.description=descr;
-		this.data=data;
+		/*this.data=data;*/
 		Contact contact=new Contact();
 		contact.setname(name);
 		contact.setsurname(surname);
 	}
-	public void setname(String name)
+	public void setname(String nazvanie)
 	{
-		this.name=name;
+		this.nazvanie=nazvanie;
 	}
 	public String getname(){
-		return name;
+		return nazvanie;
 	}
 	public void setdescription(String description)
 	{
@@ -38,14 +33,19 @@ public class Task {
 	public Date getdata(){
 		return data;
 	}
-	
-	
-	public static void main(String args[]){
-	Task[] task=new Task[10];
-	/*task[0]=new Task("nazvanie","descr","data","name", "surname", telefon);*/
-	
+	@Override
+	public String toString(){
+		return "Название задачи: "+ nazvanie + " Описание задачи: " + description + " Имя контакта: "/*+ contact.getname()*/;
 	}
-
+	
+	
+	public static void main(String[] args) {
+        ArrayList<Task> Tasks = new ArrayList<Task>();
+		Task task=new Task("yytr","try","eryt","eytter");
+	    
+		Tasks.add(task);
+		System.out.println(Tasks);
+}
 }
 class Contact{
 	private String name;
@@ -73,3 +73,4 @@ class Contact{
 		return telefon;
 	}
 }
+
