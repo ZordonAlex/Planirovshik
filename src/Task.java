@@ -5,17 +5,17 @@ public class Task {
 	private String description;
 	private Date data; 
 	Contact contact;
-	public Task (String nazvanie,String descr){
+	public Task (String nazvanie,String descr,String name){
 		this.nazvanie=nazvanie;
 		this.description=descr;
-		
-		
+		contact.setName(name);//пытаюсь записать имя контакта, но выводится ошибка Exception in thread "main" java.lang.NullPointerException
 	}
-	public void setName(String nazvanie)
+	
+	public void setNazvanie(String nazvanie)
 	{
 		this.nazvanie=nazvanie;
 	}
-	public String getName(){
+	public String getNazvanie(){
 		return nazvanie;
 	}
 	public void setDescription(String description)
@@ -34,13 +34,13 @@ public class Task {
 	}
 	@Override
 	public String toString(){
-		return "Название задачи: "+ nazvanie + " Описание задачи: " + description + " Имя контакта: "/*+ contact.getname()*/;
+		return "Название задачи: "+ nazvanie + " Описание задачи: " + description + " Имя контакта: "+ contact.getName();
 	}
 	
 	
 	public static void main(String[] args) {
         ArrayList<Task> Tasks = new ArrayList<Task>();
-		Task task=new Task("yytr","try");
+		Task task=new Task("yytr","try","fdsfd");// и тут ошибка 
 	    
 		Tasks.add(task);
 		System.out.println(Tasks);
