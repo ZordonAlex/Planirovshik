@@ -3,34 +3,33 @@ import java.util.Date;
 public class Task {
 	private String nazvanie;
 	private String description;
-	private Date data;
-	public Task (String nazvanie,String descr,String name, String surname){
+	private Date data; 
+	Contact contact;
+	public Task (String nazvanie,String descr){
 		this.nazvanie=nazvanie;
 		this.description=descr;
-		/*this.data=data;*/
-		Contact contact=new Contact();
-		contact.setname(name);
-		contact.setsurname(surname);
+		
+		
 	}
-	public void setname(String nazvanie)
+	public void setName(String nazvanie)
 	{
 		this.nazvanie=nazvanie;
 	}
-	public String getname(){
+	public String getName(){
 		return nazvanie;
 	}
-	public void setdescription(String description)
+	public void setDescription(String description)
 	{
 		this.description=description;
 	}
-	public String getdescription(){
+	public String getDescription(){
 		return description;
 	}
-	public void setdata(Date data)
+	public void setData(Date data)
 	{
 		this.data=data;
 	}
-	public Date getdata(){
+	public Date getData(){
 		return data;
 	}
 	@Override
@@ -41,36 +40,10 @@ public class Task {
 	
 	public static void main(String[] args) {
         ArrayList<Task> Tasks = new ArrayList<Task>();
-		Task task=new Task("yytr","try","eryt","eytter");
+		Task task=new Task("yytr","try");
 	    
 		Tasks.add(task);
 		System.out.println(Tasks);
 }
-}
-class Contact{
-	private String name;
-	private String surname;
-	private int telefon;
-	public void setname(String name)
-	{
-		this.name=name;
-	}
-	public String getname(){
-		return name;
-	}
-	public void setsurname(String surname)
-	{
-		this.surname=surname;
-	}
-	public String getsurname(){
-		return surname;
-	}
-	public void settelefon(int telefon)
-	{
-		this.telefon=telefon;
-	}
-	public int gettelefon(){
-		return telefon;
-	}
 }
 
