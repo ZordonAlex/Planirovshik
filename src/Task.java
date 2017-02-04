@@ -1,19 +1,17 @@
 import java.util.*;
-import java.io.*;
 public class Task {
     private String name;
     private String description;
     Contact contact = new Contact();
     private Date date;
     public Task(){}
-    public Task (String names,String descr,String name, Date date){
+    public Task (String names,String descr,String name,String surname,Date date, String telefon){
         setName(names);
         setDescription(descr);
         contact.setName(name);
+        contact.setSurname(surname);
+        contact.setTelefon(telefon);
         setDate(date);
-        /*this.date = new GregorianCalendar(year, month - 1, day, hour,min );*/
-
-
 
     }
     public void setDate(Date date) {
@@ -40,23 +38,7 @@ public class Task {
 
     @Override
     public String toString(){
-        return "Название задачи: "+ name + "\n" + "Описание задачи: " + description + "\n" + "Имя контакта: "+ contact.getName() + "\n" + "Время задачи: "+ date;
+        return "Название задачи: "+ name + "\n" + "Описание задачи: " + description + "\n" + "Имя контакта: "+ contact.getName() + " Фамилия контакта: "+ contact.getSurname() + " Телефон контакта: "+ contact.getTelefon() + "\n" + "Время задачи: "+ date + "\n";
     }
- /*public int check() {
 
-     int i = 0;
-     if(date.before(date_out)) {
-         i = 1;
-     }
-     return i;
- }*/
-
-   /* public static void main(String[] args) {
-        ArrayList<Task> Tasks = new ArrayList<Task>();
-        Task task=new Task("yytr","try","fdsfd",1994,4,5,23,23,23);// и тут ошибка
-
-        Tasks.add(task);
-        System.out.println(Tasks);
-
-    }*/
 }
